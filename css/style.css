@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.checkbox-coffee {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: #334;
+}
+.checkbox-coffee .coffee-container {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  background: #3e3e3e;
+  box-shadow: 0 0 0 4px #303030;
+  border-radius: 75px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-coffee .coffee-container .coffee-input {
+  appearance: none;
+}
+
+.checkbox-coffee .coffee-container .coffee-mug {
+  position: absolute;
+  left: 0;
+  width: 100px;
+  height: 50px;
+  background: url('../img/c1.PNG');
+  background-size: auto 50px;
+  background-repeat: no-repeat;
+  transition: 1.5s;
+  transform: rotate(-180deg);
+  transform-origin: 25px; /* half the background-size 150px */
+}
+.checkbox-coffee .coffee-container .coffee-input:checked ~ .coffee-mug {
+  left: 50px;
+  background: url('../img/c2.PNG');
+  background-size: auto 50px;
+  background-repeat: no-repeat;
+  transform: rotate(360deg);
+  transform-origin: 25px; /* half the background-size 150px */
+}
+.checkbox-coffee .coffee-container .coffee-label {
+  position: absolute;
+  left: -65px;
+  font-family: consolas;
+  color: #fff;
+  font-size: 1.8rem;
+  filter: drop-shadow(0 0 15px #fff) drop-shadow(0 0 15px #fff);
+  transition: 1.5s;
+}
+
+.checkbox-coffee .coffee-container .coffee-input:checked ~ .coffee-label {
+  color: #8f8f8f;
+  filter: none;
+}
+
+.checkbox-coffee .coffee-container .coffee-label:last-child {
+  position: absolute;
+  left: initial;
+  right: -50px;
+  color: #8f8f8f;
+  filter: none;
+}
+.checkbox-coffee
+  .coffee-container
+  .coffee-input:checked
+  ~ .coffee-label:last-child {
+  filter: drop-shadow(0 0 15px #fff) drop-shadow(0 0 15px #fff);
+  color: #fff;
+}
